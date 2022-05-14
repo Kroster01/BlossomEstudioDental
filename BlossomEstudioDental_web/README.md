@@ -33,3 +33,18 @@ npm i bootswatch
 npm i bootstrap
 npm i jquery
 npm i @popperjs/core
+
+ng g c shared/components/header --module app
+ng g m shared/components/header --module app
+
+ng g m pages/blossom/list --module app
+ng g c pages/blossom/list --module app
+
+ng g m pages/blossom/new --module app
+ng g c pages/blossom/new --module app
+
+ng g m pages/blossom/details --module app
+ng g c pages/blossom/details --module app
+
+ng g m pages/blossom/edit --module app
+ng g c pages/blossom/edit --module app
