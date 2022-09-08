@@ -54,6 +54,12 @@ ng g c auth/sendEmail
 
 https://www.youtube.com/watch?v=Y3ojE5SASFg&list=PL_9MDdjVuFjEJXpRgrCMvxKHgdtdk6AOJ&index=3
 
+ng g c auth/forgot-password
+ng g m auth/forgot-password -m=app --route forgot-password
+ng g m auth/forgot-password -m=app --route forgot-password
+
+https://www.youtube.com/watch?v=UExx6Cl4xRQ&list=PL_9MDdjVuFjEJXpRgrCMvxKHgdtdk6AOJ&index=4
+
 
 // pendentes por validar.
 ng g c shared/components/header --module app
