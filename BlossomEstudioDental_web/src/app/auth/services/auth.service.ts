@@ -35,13 +35,14 @@ export class AuthService {
   }
 
   async logout() {
+    let result;
     try {
-      await this.afAuth.signOut();
+     let result = await this.afAuth.signOut();
     }
     catch (error) {
       console.log(error);
     }
-
+    return result;
   }
 
   async getCurrentUser() {
