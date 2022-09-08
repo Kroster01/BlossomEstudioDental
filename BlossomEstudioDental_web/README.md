@@ -34,6 +34,29 @@ npm i bootstrap
 npm i jquery
 npm i @popperjs/core
 
+ng add @angular/fire
+npm i firebase
+
+npm i bootstrap jquery @popperjs/core
+
+ng g m home -m=app --route home
+
+ng g c shared/navbar
+ng g m auth/login -m=app --route login
+ng g m auth/register -m=app --route register
+
+ng g s auth/services/auth
+
+
+
+
+https://www.youtube.com/watch?v=rwIOw7f0RHk&list=PL_9MDdjVuFjEJXpRgrCMvxKHgdtdk6AOJ&index=2
+
+
+
+
+
+// pendentes por validar.
 ng g c shared/components/header --module app
 ng g m shared/components/header --module app
 

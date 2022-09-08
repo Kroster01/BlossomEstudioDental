@@ -3,16 +3,24 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'list', loadChildren: () => import('../pages/blossom/list/list.module').then(m => m.ListModule)
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
   },
   {
-    path: 'new', loadChildren: () => import('../pages/blossom/new/new.module').then(m => m.NewModule)
+    path: 'home',
+    loadChildren: () =>
+      import('../home/home.module').then(m => m.HomeModule)
   },
   {
-    path: 'details', loadChildren: () => import('../pages/blossom/details/details.module').then(m => m.DetailsModule)
+    path: 'login',
+    loadChildren: () =>
+      import('../auth/login/login.module').then(m => m.LoginModule)
   },
   {
-    path: 'edit', loadChildren: () => import('../pages/blossom/edit/edit.module').then(m => m.EditModule)
+    path: 'register',
+    loadChildren: () =>
+      import('../auth/register/register.module').then(m => m.RegisterModule)
   }
 ];
 

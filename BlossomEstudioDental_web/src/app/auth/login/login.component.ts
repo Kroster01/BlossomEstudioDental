@@ -1,0 +1,38 @@
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
+  providers: [AuthService]
+})
+export class LoginComponent implements OnInit {
+  formulario: FormGroup = new FormGroup(
+    {
+      email: new FormControl(''),
+      password: new FormControl(''),
+    }
+  );
+  constructor(
+    private authSVC: AuthService,
+    private router: Router) { }
+
+  ngOnInit(): void {
+  }
+
+  async onLogin() {
+    const {email, password} = this.formulario.value;
+    try {
+      console.log('Form -> ' + JSON.stringify(this.formulario.value));
+      const user = await this.authSVC.login(email, password);
+      if (user) {
+        this.router.navigate(['/home']);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
+}
