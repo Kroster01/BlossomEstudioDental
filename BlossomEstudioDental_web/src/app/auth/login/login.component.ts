@@ -28,8 +28,12 @@ export class LoginComponent implements OnInit {
     try {
       console.log('Form -> ' + JSON.stringify(this.formulario.value));
       const user = await this.authSVC.login(email, password);
-      if (user) {
+      if (user && user.user && user.user.emailVerified) {
         this.router.navigate(['/home']);
+      } else if(user) {
+        this.router.navigate(['/verification-email']);
+      } else {
+        this.router.navigate(['/register']);
       }
     } catch (err) {
       console.log(err);

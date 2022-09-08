@@ -10,11 +10,13 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { SendEmailComponent } from './auth/send-email/send-email.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
+    SendEmailComponent,
   ],
   imports: [
     BrowserModule,

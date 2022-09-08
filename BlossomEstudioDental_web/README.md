@@ -48,12 +48,11 @@ ng g m auth/register -m=app --route register
 ng g s auth/services/auth
 
 
-
-
 https://www.youtube.com/watch?v=rwIOw7f0RHk&list=PL_9MDdjVuFjEJXpRgrCMvxKHgdtdk6AOJ&index=2
 
+ng g c auth/sendEmail
 
-
+https://www.youtube.com/watch?v=Y3ojE5SASFg&list=PL_9MDdjVuFjEJXpRgrCMvxKHgdtdk6AOJ&index=3
 
 
 // pendentes por validar.

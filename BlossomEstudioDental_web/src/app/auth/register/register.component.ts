@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
       console.log('Form -> ' + JSON.stringify(this.formulario.value));
       const user = await this.authSVC.regiter(email, password);
       if (user) {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/verification-email']);
       }
     } catch (error) {
       console.log(error);

@@ -11,6 +11,11 @@ export class AuthService {
   public user: any;
   constructor(public afAuth: AngularFireAuth) { }
 
+  async sendVerificationEmail(): Promise<void> {
+    let currentUser = await this?.afAuth?.currentUser;
+    return currentUser?.sendEmailVerification();
+  }
+
   async login(email: string, password: string) {
     let result;
     try {
@@ -27,6 +32,7 @@ export class AuthService {
     let result;
     try {
       result = await this.afAuth.createUserWithEmailAndPassword(email, password);
+      this.sendVerificationEmail();
     }
     catch (error) {
       console.log(error);
@@ -37,7 +43,7 @@ export class AuthService {
   async logout() {
     let result;
     try {
-     let result = await this.afAuth.signOut();
+      let result = await this.afAuth.signOut();
     }
     catch (error) {
       console.log(error);
