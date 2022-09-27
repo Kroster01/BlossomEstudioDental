@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
@@ -10,19 +10,26 @@ import { AuthService } from '../services/auth.service';
 })
 export class ForgotPasswordComponent {
 
-  userEmail = new FormControl('');
+  formulario: FormGroup = new FormGroup(
+    {
+      userEmail: new FormControl('')
+    }
+  );
 
-  constructor(public authSVC: AuthService, private router: Router) { }
+  constructor(
+    private authSVC: AuthService,
+    private router: Router) { }
 
   async onReset(): Promise<void> {
     try {
-      const email = this.userEmail.value;
-      await this.authSVC.resetPassword(email);
+      const { userEmail } = this.formulario.value;
+      let responseForgetPassWord = await this.authSVC.resetPassword(userEmail);
+      console.log(JSON.stringify(responseForgetPassWord));
       window.alert('Se envió, favor revisar tu correo.');
       this.router.navigate(['/login']);
     } catch (error) {
       console.log(error);
     }
-
   }
+
 }
