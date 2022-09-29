@@ -5,13 +5,18 @@ import { SendEmailComponent } from '../auth/send-email/send-email.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '/homeP',
     pathMatch: 'full'
   },
   {
     path: 'home',
     loadChildren: () =>
       import('../home/home.module').then(m => m.HomeModule)
+  },
+  {
+    path: 'homeP',
+    loadChildren: () =>
+      import('../home-publico/home-publico.module').then(m => m.HomePublicoModule)
   },
   {
     path: 'login',
