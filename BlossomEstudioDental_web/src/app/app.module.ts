@@ -10,12 +10,18 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { SendEmailComponent } from './auth/send-email/send-email.component';
 import { AuthService } from './auth/services/auth.service';
+import { HomePagosComponent } from './pages/pagos/home-pagos/home-pagos.component';
+import { ListComponent } from './pages/pagos/list/list.component';
+import { NewComponent } from './pages/pagos/new/new.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     SendEmailComponent,
+    HomePagosComponent,
+    NewComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +29,7 @@ import { AuthService } from './auth/services/auth.service';
     ReactiveFormsModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,
+    AngularFireAuthModule
   ],
   providers: [
     AuthService
