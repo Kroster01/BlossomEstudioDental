@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class EditComponent implements OnInit {
 
   @Input() item: any;
-  @Output() ButtonClick = new EventEmitter<string>();
+  @Output() ButtonClick = new EventEmitter<any>();
 
   constructor() { }
 
@@ -19,7 +19,11 @@ export class EditComponent implements OnInit {
 
   volver(): void {
     console.log('volver app-edit');
-    this.ButtonClick.emit("app-edit");
+    let btnClick = {
+      origen: 'app-edit',
+      action: 'listar'
+    };
+    this.ButtonClick.emit(btnClick);
   }
 
 }

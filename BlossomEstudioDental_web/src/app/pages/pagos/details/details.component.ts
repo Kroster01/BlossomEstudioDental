@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class DetailsComponent implements OnInit {
 
   @Input() item: any;
-  @Output() ButtonClick = new EventEmitter<string>();
+  @Output() ButtonClick = new EventEmitter<any>();
 
   constructor() { }
 
@@ -17,9 +17,26 @@ export class DetailsComponent implements OnInit {
     console.log(JSON.stringify(this.item));
   }
 
+  edit(): void {
+    console.log('edit app-details');
+    let btnClick = {
+      origen: 'app-details',
+      action: 'edit'
+    };
+    this.ButtonClick.emit(btnClick);
+  }
+
+  delete(): void {
+    console.log('delete app-details');
+  }
+
   volver(): void {
     console.log('volver app-details');
-    this.ButtonClick.emit("app-edit");
+    let btnClick = {
+      origen: 'app-details',
+      action: 'listar'
+    };
+    this.ButtonClick.emit(btnClick);
   }
 
 }

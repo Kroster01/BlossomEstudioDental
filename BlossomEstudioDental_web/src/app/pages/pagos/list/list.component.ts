@@ -46,14 +46,11 @@ export class ListComponent implements OnInit {
 
   clickChild(event: any): void {
     console.log('eventos de edit click');
-    if (event == "app-edit") {
-      console.log('eventos de edit click --> app-edit');
-      this.showLista = true;
-      this.showEdit = false;
+    if (event && event.action == "edit") {
+      this.showLista = false;
+      this.showEdit = true;
       this.showDetails = false;
-    }
-    if (event == "app-details") {
-      console.log('eventos de edit click --> app-details');
+    } else {
       this.showLista = true;
       this.showEdit = false;
       this.showDetails = false;
