@@ -26,4 +26,8 @@ export class EditComponent implements OnInit {
     this.ButtonClick.emit(btnClick);
   }
 
+  guardar(): void {
+    console.log('guardar app-edit');
+  }
+
 }
