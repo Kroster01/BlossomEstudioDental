@@ -9,12 +9,14 @@ export class EditComponent implements OnInit {
 
   @Input() item: any;
   @Output() ButtonClick = new EventEmitter<any>();
+  element: any;
 
   constructor() { }
 
   ngOnInit(): void {
     console.log('Init app-edit : item');
     console.log(JSON.stringify(this.item));
+    this.element = this.item.state.value;
   }
 
   volver(): void {
@@ -28,6 +30,7 @@ export class EditComponent implements OnInit {
 
   guardar(): void {
     console.log('guardar app-edit');
+    alert('se guarda el item: ' + this.element);
   }
 
 }

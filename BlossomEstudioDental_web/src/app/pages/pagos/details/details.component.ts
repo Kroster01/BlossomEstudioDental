@@ -9,12 +9,14 @@ export class DetailsComponent implements OnInit {
 
   @Input() item: any;
   @Output() ButtonClick = new EventEmitter<any>();
+  element: any;
 
   constructor() { }
 
   ngOnInit(): void {
     console.log('Init app-details : item');
     console.log(JSON.stringify(this.item));
+    this.element = this.item.state.value;
   }
 
   edit(): void {
@@ -28,7 +30,7 @@ export class DetailsComponent implements OnInit {
 
   delete(): void {
     console.log('delete app-details');
-    alert('Deleted');
+    alert('se elimina el item: ' + this.element);
   }
 
   volver(): void {

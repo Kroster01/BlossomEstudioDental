@@ -42,6 +42,7 @@ export class ListComponent implements OnInit {
 
   onGoToDelete(item: any): void {
     console.log('onGoToDelete');
+    alert('se elimina el item: ' + item);
   }
 
   clickChild(event: any): void {
