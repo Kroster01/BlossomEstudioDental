@@ -28,6 +28,7 @@ export class DetailsComponent implements OnInit {
 
   delete(): void {
     console.log('delete app-details');
+    alert('Deleted');
   }
 
   volver(): void {
