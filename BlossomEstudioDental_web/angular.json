@@ -38,6 +38,17 @@
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/@popperjs/core/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true,
+            "allowedCommonJsDependencies": [
+                "chart.js",
+                "crypto-js"
             ]
           },
           "configurations": {
