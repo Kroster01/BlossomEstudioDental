@@ -1,1 +1,41 @@
-<p>list works!</p>
+
+<table class="table table-hover mt-4" *ngIf="showLista">
+    <thead>
+        <tr>
+            <th scope="col">Nombre Profecional</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Monto</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Observación</th>
+            <th scope="col">Pagos Honorarios</th>
+            <th scope="col" class="d-none d-sm-block">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="table-primary" *ngFor="let item of [0,1,2,3,4]">
+            <th scope="row">Active</th>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td class="btn-group d-none d-sm-block" role="group">
+
+                <button type="button" class="btn btn-outline-warning mt-1" (click)="onGoToEdit(0)">Edit</button>
+                <button type="button" class="btn btn-outline-warning mt-1" style="margin-left: 10px; margin-right: 10px;" (click)="onGoToSee(0)">See</button>
+                <button type="button" class="btn btn-outline-danger mt-1" (click)="onGoToDelete(0)">Delete</button>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="container" *ngIf="showEdit">
+    <app-edit [item]="navigationExtras" (ButtonClick)="clickChild($event)"></app-edit>
+</div>
+
+<div class="container" *ngIf="showDetails">
+    <app-details [item]="navigationExtras" (ButtonClick)="clickChild($event)"></app-details>
+</div>

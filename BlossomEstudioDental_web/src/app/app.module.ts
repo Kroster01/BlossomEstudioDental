@@ -13,6 +13,8 @@ import { AuthService } from './auth/services/auth.service';
 import { HomePagosComponent } from './pages/pagos/home-pagos/home-pagos.component';
 import { ListComponent } from './pages/pagos/list/list.component';
 import { NewComponent } from './pages/pagos/new/new.component';
+import { DetailsComponent } from './pages/pagos/details/details.component';
+import { EditComponent } from './pages/pagos/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { NewComponent } from './pages/pagos/new/new.component';
     SendEmailComponent,
     HomePagosComponent,
     NewComponent,
-    ListComponent
+    ListComponent,
+    DetailsComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

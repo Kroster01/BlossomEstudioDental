@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-edit',
@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditComponent implements OnInit {
 
+  @Input() item: any;
+  @Output() ButtonClick = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log('Init app-edit : item');
+    console.log(JSON.stringify(this.item));
+  }
+
+  volver(): void {
+    console.log('volver app-edit');
+    this.ButtonClick.emit("app-edit");
   }
 
 }
