@@ -13,6 +13,50 @@ export class ListComponent implements OnInit {
       value: null
     }
   };
+
+  fakeData = [{
+    nombre: 'Marcela',
+    apellido: 'Huina',
+    descricion: 'Derscripción trabajo',
+    fecha: '03/03/2022',
+    monto: '10000',
+    estado: 1,
+    obserbacion: 'N/A',
+    pagoHonorario: false,
+    createReg: '01/03/2022',
+  },{
+    nombre: 'Fernando',
+    apellido: 'Curihual',
+    descricion: 'Derscripción trabajo',
+    fecha: '05/05/2022',
+    monto: '30000',
+    estado: 0,
+    obserbacion: 'N/A',
+    pagoHonorario: false,
+    createReg: '01/03/2022',
+  },{
+    nombre: 'Nicole',
+    apellido: 'Coñuepan',
+    descricion: 'Derscripción trabajo',
+    fecha: '04/04/2022',
+    monto: '50000',
+    estado: 2,
+    obserbacion: 'N/A',
+    pagoHonorario: true,
+    createReg: '01/03/2022',
+  },{
+    nombre: 'Andrea',
+    apellido: 'Morales',
+    descricion: 'Derscripción trabajo',
+    fecha: '08/08/2022',
+    monto: '70000',
+    estado: 1,
+    obserbacion: 'N/A',
+    pagoHonorario: true,
+    createReg: '01/03/2022',
+  },
+];
+
   showLista = true;
   showEdit = false;
   showDetails = false;

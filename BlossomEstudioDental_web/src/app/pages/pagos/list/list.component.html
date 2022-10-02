@@ -13,14 +13,26 @@
         </tr>
     </thead>
     <tbody>
-        <tr class="table-primary" *ngFor="let item of [0,1,2,3,4]">
-            <th scope="row">Active ({{item}})</th>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
+        <tr class="table-primary" *ngFor="let item of fakeData">
+            <th scope="row">{{ item.nombre }} {{ item.apellido }}</th>
+            <td>{{ item.descricion }}</td>
+            <td>{{item.fecha | date:'MMMM'}}</td>
+            <td>{{ item.monto | currency: '$ ' | lowercase }}</td>
+            <td>
+                <div *ngIf="item.estado == 0">
+                    Pagado
+                </div>
+                <div *ngIf="item.estado == 1">
+                    Pendiente
+                </div> 
+                <div *ngIf="item.estado == 2">
+                    Otro
+                </div> 
+            </td>
+            <td>{{ item.obserbacion }}</td>
+            <td>
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" [(ngModel)]="item.pagoHonorario">
+            </td>
             <td class="btn-group d-none d-sm-block" role="group">
 
                 <button type="button" class="btn btn-outline-warning mt-1" (click)="onGoToEdit(item)">Edit</button>
