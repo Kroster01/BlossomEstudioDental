@@ -20,6 +20,12 @@ export class EditComponent implements OnInit {
     console.log(JSON.stringify(this.item));
     this.element = this.item.state.value;
     this.initForm();
+    if (typeof this.element == 'undefined') {
+      // redirigir o mostrar un mensaje.
+      // TODO: re dirigir a new
+    } else {
+      this.pagosForm.patchValue(this.element);
+    }
   }
 
   volver(): void {

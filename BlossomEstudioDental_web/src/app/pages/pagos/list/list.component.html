@@ -15,7 +15,7 @@
     <tbody>
         <tr class="table-primary" *ngFor="let item of fakeData">
             <th scope="row">{{ item.nombre }} {{ item.apellido }}</th>
-            <td>{{ item.descricion }}</td>
+            <td>{{ item.descripcion }}</td>
             <td>{{item.fecha | date:'MMMM'}}</td>
             <td>{{ item.monto | currency: '$ ' | lowercase }}</td>
             <td>
@@ -29,7 +29,7 @@
                     Otro
                 </div> 
             </td>
-            <td>{{ item.obserbacion }}</td>
+            <td>{{ item.observacion }}</td>
             <td>
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" [(ngModel)]="item.pagoHonorario">
             </td>
