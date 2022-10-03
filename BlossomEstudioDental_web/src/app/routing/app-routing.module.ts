@@ -41,6 +41,11 @@ const routes: Routes = [
     path: 'homepagos',
     loadChildren: () =>
       import('../pages/pagos/home-pagos/home-pagos.module').then(m => m.HomePagosModule)
+  },
+  {
+    path: 'homeprof',
+    loadChildren: () =>
+      import('../pages/profesionales/home-prof/home-prof.module').then(m => m.HomeProfModule)
   }
 ];
 

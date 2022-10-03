@@ -10,22 +10,32 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { SendEmailComponent } from './auth/send-email/send-email.component';
 import { AuthService } from './auth/services/auth.service';
+
 import { HomePagosComponent } from './pages/pagos/home-pagos/home-pagos.component';
 import { ListComponent } from './pages/pagos/list/list.component';
 import { NewComponent } from './pages/pagos/new/new.component';
 import { DetailsComponent } from './pages/pagos/details/details.component';
 import { EditComponent } from './pages/pagos/edit/edit.component';
 
+import { HomeProfComponent } from './pages/profesionales/home-prof/home-prof.component';
+import { ListProfComponent} from './pages/profesionales/list-prof/list-prof.component';
+import { NewProfComponent } from './pages/profesionales/new-prof/new-prof.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     SendEmailComponent,
+    
     HomePagosComponent,
     NewComponent,
     ListComponent,
     DetailsComponent,
-    EditComponent
+    EditComponent,
+
+    HomeProfComponent,
+    ListProfComponent,
+    NewProfComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,44 @@
+
+<table class="table table-hover mt-4" *ngIf="showLista">
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Rut</th>
+            <th scope="col">Especialidad</th>
+            <th scope="col">Estado</th>
+            <th scope="col" class="d-none d-sm-block">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="table-primary" *ngFor="let item of fakeData">
+            <th scope="row">{{ item.nombre }}</th>
+            <td>{{ item.apellido }}</td>
+            <td>{{ item.rut }}</td>
+            <td>{{ item.especialidad }}</td>
+            <td>
+                <div *ngIf="item.estado">
+                    Activo
+                </div>
+                <div *ngIf="!item.estado">
+                    in-Activo
+                </div>
+            </td>
+            <td class="d-none d-sm-block" role="group">
+
+                <button type="button" class="btn btn-outline-warning mt-1" (click)="onGoToEdit(item)">Edit</button>
+                <button type="button" class="btn btn-outline-warning mt-1" style="margin-left: 10px; margin-right: 10px;" (click)="onGoToSee(item)">See</button>
+                <button type="button" class="btn btn-outline-danger mt-1" (click)="onGoToDelete(item)">Delete</button>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="container" *ngIf="showEdit">
+    <!--<app-edit [item]="navigationExtras" (ButtonClick)="clickChild($event)"></app-edit>-->
+</div>
+
+<div class="container" *ngIf="showDetails">
+    <!--<app-details [item]="navigationExtras" (ButtonClick)="clickChild($event)"></app-details>-->
+</div>

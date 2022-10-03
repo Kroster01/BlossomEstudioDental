@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  selector: 'app-list-prof',
+  templateUrl: './list-prof.component.html',
+  styleUrls: ['./list-prof.component.scss']
 })
-export class ListComponent implements OnInit {
+export class ListProfComponent implements OnInit {
 
   navigationExtras: NavigationExtras = {
     state: {
@@ -18,47 +18,35 @@ export class ListComponent implements OnInit {
     id: 0,
     nombre: 'Marcela',
     apellido: 'Huina',
-    descripcion: 'Derscripción trabajo Marce',
-    fecha: '03/03/2022',
-    monto: '10000',
-    estado: 1,
-    observacion: 'N/A Marcela',
-    pagoHonorario: false,
+    rut: 'xx.xxx.xxx-x',
+    especialidad: 'esp 0',
+    estado: true,
     createReg: '01/03/2022',
   }, {
     id: 1,
     nombre: 'Fernando',
     apellido: 'Curihual',
-    descripcion: 'Derscripción trabajo Fernando',
-    fecha: '05/05/2022',
-    monto: '30000',
-    estado: 0,
-    observacion: 'N/A Fernando',
-    pagoHonorario: false,
+    rut: 'xx.xxx.xxx-x',
+    especialidad: 'esp 1',
+    estado: true,
     createReg: '01/03/2022',
   }, {
     id: 2,
     nombre: 'Nicole',
     apellido: 'Coñuepan',
-    descripcion: 'Derscripción trabajo Nicole',
-    fecha: '04/04/2022',
-    monto: '50000',
-    estado: 2,
-    observacion: 'N/A Nicole',
-    pagoHonorario: true,
+    rut: 'xx.xxx.xxx-x',
+    especialidad: 'esp 2',
+    estado: false,
     createReg: '01/03/2022',
   }, {
     id: 3,
     nombre: 'Andrea',
     apellido: 'Morales',
-    descripcion: 'Derscripción trabajo Andrea',
-    fecha: '08/08/2022',
-    monto: '70000',
-    estado: 1,
-    observacion: 'N/A Andrea',
-    pagoHonorario: true,
+    rut: 'xx.xxx.xxx-x',
+    especialidad: 'esp 3',
+    estado: true,
     createReg: '01/03/2022',
-  }
+  },
   ];
 
   showLista = true;
