@@ -2,11 +2,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-edit',
-  templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.scss']
+  selector: 'app-edit-prof',
+  templateUrl: './edit-prof.component.html',
+  styleUrls: ['./edit-prof.component.scss']
 })
-export class EditComponent implements OnInit {
+export class EditProfComponent implements OnInit {
 
   @Input() item: any;
   @Output() ButtonClick = new EventEmitter<any>();
@@ -44,13 +44,18 @@ export class EditComponent implements OnInit {
 
   private initForm(): void {
     this.pagosForm = this.fb.group({
-      NomProfecional: ['', [Validators.required]],
-      descripcion: ['', [Validators.required]],
-      fecha: ['', [Validators.required]],
-      monto: ['', [Validators.required]],
-      estado: ['', [Validators.required]],
-      observacion: ['', [Validators.required]],
-      pagoHonorarios: ['', [Validators.required]]
+      nombre: ['', [Validators.required]],
+      apellido: ['', [Validators.required]],
+      rut: ['', [Validators.required]],
+      especialidad: ['', [Validators.required]],
+      estado: ['', [Validators.required]]
     });
   }
 }
+
+
+/*
+https://www.youtube.com/watch?v=nEfemck6iNk
+min 55.26
+
+*/

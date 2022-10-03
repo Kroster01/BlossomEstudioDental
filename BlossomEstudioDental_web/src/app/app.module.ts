@@ -20,6 +20,8 @@ import { EditComponent } from './pages/pagos/edit/edit.component';
 import { HomeProfComponent } from './pages/profesionales/home-prof/home-prof.component';
 import { ListProfComponent} from './pages/profesionales/list-prof/list-prof.component';
 import { NewProfComponent } from './pages/profesionales/new-prof/new-prof.component';
+import { DetailsProfComponent } from './pages/profesionales/details-prof/details-prof.component';
+import { EditProfComponent } from './pages/profesionales/edit-prof/edit-prof.component';
 
 @NgModule({
   declarations: [
@@ -28,14 +30,16 @@ import { NewProfComponent } from './pages/profesionales/new-prof/new-prof.compon
     SendEmailComponent,
     
     HomePagosComponent,
-    NewComponent,
     ListComponent,
+    NewComponent,
     DetailsComponent,
     EditComponent,
 
     HomeProfComponent,
     ListProfComponent,
-    NewProfComponent
+    NewProfComponent,
+    DetailsProfComponent,
+    EditProfComponent
   ],
   imports: [
     BrowserModule,

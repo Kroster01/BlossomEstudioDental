@@ -36,9 +36,9 @@
 </table>
 
 <div class="container" *ngIf="showEdit">
-    <!--<app-edit [item]="navigationExtras" (ButtonClick)="clickChild($event)"></app-edit>-->
+    <app-edit-prof [item]="navigationExtras" (ButtonClick)="clickChild($event)"></app-edit-prof>
 </div>
 
 <div class="container" *ngIf="showDetails">
-    <!--<app-details [item]="navigationExtras" (ButtonClick)="clickChild($event)"></app-details>-->
+    <app-details-prof [item]="navigationExtras" (ButtonClick)="clickChild($event)"></app-details-prof>
 </div>
