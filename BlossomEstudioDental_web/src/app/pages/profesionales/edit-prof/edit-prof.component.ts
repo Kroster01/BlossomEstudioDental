@@ -38,7 +38,7 @@ export class EditProfComponent implements OnInit {
   }
 
   guardar(): void {
-    console.log('guardar app-edit');
+    console.log('guardar app-edit-prof');
     alert('se guarda el item: ' + this.element.id);
   }
 
