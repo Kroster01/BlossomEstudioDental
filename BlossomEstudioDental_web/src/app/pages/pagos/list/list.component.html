@@ -8,7 +8,7 @@
             <th scope="col">Estado</th>
             <th scope="col">Observación</th>
             <th scope="col">Pagos Honorarios</th>
-            <th scope="col" class="d-none d-sm-block">Acciones</th>
+            <th scope="col">Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -33,7 +33,7 @@
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
                     [(ngModel)]="item.pagoHonorario" disabled>
             </td>
-            <td class="d-none d-sm-block" role="group">
+            <td role="group">
 
                 <button type="button" class="btn btn-outline-warning mt-1" (click)="onGoToEdit(item)">Edit</button>
                 <button type="button" class="btn btn-outline-warning mt-1"
