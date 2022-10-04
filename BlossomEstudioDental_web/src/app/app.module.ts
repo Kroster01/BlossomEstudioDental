@@ -22,6 +22,8 @@ import { ListProfComponent} from './pages/profesionales/list-prof/list-prof.comp
 import { NewProfComponent } from './pages/profesionales/new-prof/new-prof.component';
 import { DetailsProfComponent } from './pages/profesionales/details-prof/details-prof.component';
 import { EditProfComponent } from './pages/profesionales/edit-prof/edit-prof.component';
+import { PagoFormComponent } from './shared/pago-form/pago-form.component';
+import { ProfesionalFormComponent } from './shared/profesional-form/profesional-form.component';
 
 @NgModule({
   declarations: [
@@ -34,12 +36,14 @@ import { EditProfComponent } from './pages/profesionales/edit-prof/edit-prof.com
     NewComponent,
     DetailsComponent,
     EditComponent,
+    PagoFormComponent,
 
     HomeProfComponent,
     ListProfComponent,
     NewProfComponent,
     DetailsProfComponent,
-    EditProfComponent
+    EditProfComponent,
+    ProfesionalFormComponent,
   ],
   imports: [
     BrowserModule,

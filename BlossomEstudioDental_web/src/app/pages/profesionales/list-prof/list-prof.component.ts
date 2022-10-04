@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
+import { ProfesionalInterfae } from 'src/app/shared/models/profesional.interface';
 
 @Component({
   selector: 'app-list-prof',
@@ -8,13 +9,9 @@ import { NavigationExtras, Router } from '@angular/router';
 })
 export class ListProfComponent implements OnInit {
 
-  navigationExtras: NavigationExtras = {
-    state: {
-      value: null
-    }
-  };
+  navigationExtras: ProfesionalInterfae = {};
 
-  fakeData = [{
+  fakeData: ProfesionalInterfae[] = [{
     id: 0,
     nombre: 'Marcela',
     apellido: 'Huina',
@@ -62,7 +59,7 @@ export class ListProfComponent implements OnInit {
 
   onGoToEdit(item: any): void {
     console.log('onGoToEdit');
-    this.navigationExtras!.state!['value'] = item;
+    this.navigationExtras = item;
     this.showLista = false;
     this.showEdit = true;
     this.showDetails = false;
@@ -70,7 +67,7 @@ export class ListProfComponent implements OnInit {
 
   onGoToSee(item: any): void {
     console.log('onGoToSee');
-    this.navigationExtras!.state!['value'] = item;
+    this.navigationExtras = item;
     this.showLista = false;
     this.showEdit = false;
     this.showDetails = true;

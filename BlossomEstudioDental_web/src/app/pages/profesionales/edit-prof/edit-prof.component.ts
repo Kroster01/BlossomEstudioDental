@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ProfesionalInterfae } from 'src/app/shared/models/profesional.interface';
 
 @Component({
   selector: 'app-edit-prof',
@@ -8,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class EditProfComponent implements OnInit {
 
-  @Input() item: any;
+  @Input() item!: ProfesionalInterfae;
   @Output() ButtonClick = new EventEmitter<any>();
   element: any;
   pagosForm!: FormGroup;
@@ -18,7 +19,7 @@ export class EditProfComponent implements OnInit {
   ngOnInit(): void {
     console.log('Init app-edit : item');
     console.log(JSON.stringify(this.item));
-    this.element = this.item.state.value;
+    this.element = this.item;
     this.initForm();
     if (typeof this.element == 'undefined') {
       // redirigir o mostrar un mensaje.

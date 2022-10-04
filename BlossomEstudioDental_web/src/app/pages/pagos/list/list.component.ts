@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
+import { PagosInterfae } from 'src/app/shared/models/pago.interface';
 
 @Component({
   selector: 'app-list',
@@ -8,13 +9,9 @@ import { NavigationExtras, Router } from '@angular/router';
 })
 export class ListComponent implements OnInit {
 
-  navigationExtras: NavigationExtras = {
-    state: {
-      value: null
-    }
-  };
+  navigationExtras: PagosInterfae = {};
 
-  fakeData = [{
+  fakeData: PagosInterfae[] = [{
     id: 0,
     nombre: 'Marcela',
     apellido: 'Huina',
@@ -74,7 +71,7 @@ export class ListComponent implements OnInit {
 
   onGoToEdit(item: any): void {
     console.log('onGoToEdit');
-    this.navigationExtras!.state!['value'] = item;
+    this.navigationExtras = item;
     this.showLista = false;
     this.showEdit = true;
     this.showDetails = false;
@@ -82,7 +79,7 @@ export class ListComponent implements OnInit {
 
   onGoToSee(item: any): void {
     console.log('onGoToSee');
-    this.navigationExtras!.state!['value'] = item;
+    this.navigationExtras = item;
     this.showLista = false;
     this.showEdit = false;
     this.showDetails = true;

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ProfesionalInterfae } from 'src/app/shared/models/profesional.interface';
 
 @Component({
   selector: 'app-details-prof',
@@ -7,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class DetailsProfComponent implements OnInit {
 
-  @Input() item: any;
+  @Input() item!: ProfesionalInterfae;
   @Output() ButtonClick = new EventEmitter<any>();
   element: any;
 
@@ -16,7 +17,7 @@ export class DetailsProfComponent implements OnInit {
   ngOnInit(): void {
     console.log('Init app-details : item');
     console.log(JSON.stringify(this.item));
-    this.element = this.item.state.value;
+    this.element = this.item;
   }
 
   edit(): void {

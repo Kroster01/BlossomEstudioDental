@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { PagosInterfae } from 'src/app/shared/models/pago.interface';
 
 @Component({
   selector: 'app-details',
@@ -7,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class DetailsComponent implements OnInit {
 
-  @Input() item: any;
+  @Input() item!: PagosInterfae;
   @Output() ButtonClick = new EventEmitter<any>();
   element: any;
 
@@ -16,7 +17,7 @@ export class DetailsComponent implements OnInit {
   ngOnInit(): void {
     console.log('Init app-details : item');
     console.log(JSON.stringify(this.item));
-    this.element = this.item.state.value;
+    this.element = this.item;
   }
 
   edit(): void {

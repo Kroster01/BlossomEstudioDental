@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class EditComponent implements OnInit {
 
-  @Input() item: any;
+  @Input() item!: PagosInterfae;
   @Output() ButtonClick = new EventEmitter<any>();
   element: any;
   pagosForm!: FormGroup;
@@ -18,7 +18,7 @@ export class EditComponent implements OnInit {
   ngOnInit(): void {
     console.log('Init app-edit : item');
     console.log(JSON.stringify(this.item));
-    this.element = this.item.state.value;
+    this.element = this.item;
     this.initForm();
     if (typeof this.element == 'undefined') {
       // redirigir o mostrar un mensaje.
