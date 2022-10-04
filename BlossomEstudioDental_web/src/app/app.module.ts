@@ -7,6 +7,7 @@ import { environment } from '../environments/environment';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
+
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { SendEmailComponent } from './auth/send-email/send-email.component';
 import { AuthService } from './auth/services/auth.service';
@@ -24,6 +25,8 @@ import { DetailsProfComponent } from './pages/profesionales/details-prof/details
 import { EditProfComponent } from './pages/profesionales/edit-prof/edit-prof.component';
 import { PagoFormComponent } from './shared/pago-form/pago-form.component';
 import { ProfesionalFormComponent } from './shared/profesional-form/profesional-form.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -51,7 +54,9 @@ import { ProfesionalFormComponent } from './shared/profesional-form/profesional-
     ReactiveFormsModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideFirestore(() => getFirestore())
   ],
   providers: [
     AuthService

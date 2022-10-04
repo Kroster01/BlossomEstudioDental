@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ProfesionalInterfae } from 'src/app/shared/models/profesional.interface';
 
 @Component({
@@ -11,52 +10,13 @@ export class EditProfComponent implements OnInit {
 
   @Input() item!: ProfesionalInterfae;
   @Output() ButtonClick = new EventEmitter<any>();
-  element: any;
-  pagosForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor() { }
 
   ngOnInit(): void {
-    console.log('Init app-edit : item');
-    console.log(JSON.stringify(this.item));
-    this.element = this.item;
-    this.initForm();
-    if (typeof this.element == 'undefined') {
-      // redirigir o mostrar un mensaje.
-      // TODO: re dirigir a new
-    } else {
-      this.pagosForm.patchValue(this.element);
-    }
   }
 
-  volver(): void {
-    console.log('volver app-edit');
-    let btnClick = {
-      origen: 'app-edit',
-      action: 'listar'
-    };
-    this.ButtonClick.emit(btnClick);
-  }
-
-  guardar(): void {
-    console.log('guardar app-edit-prof');
-    alert('se guarda el item: ' + this.element.id);
-  }
-
-  private initForm(): void {
-    this.pagosForm = this.fb.group({
-      nombre: ['', [Validators.required]],
-      apellido: ['', [Validators.required]],
-      rut: ['', [Validators.required]],
-      especialidad: ['', [Validators.required]],
-      estado: ['', [Validators.required]]
-    });
+  clickChild(event: any) {
+    this.ButtonClick.emit(event);
   }
 }
-
-
-/*
-https://www.youtube.com/watch?v=nEfemck6iNk
-min 55.26
-
-*/
