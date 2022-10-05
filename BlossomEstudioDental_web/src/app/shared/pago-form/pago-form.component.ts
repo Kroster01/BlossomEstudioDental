@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { PagosInterfae } from '../models/pago.interface';
+import { PagosInterface } from '../models/pago.interface';
 
 @Component({
   selector: 'app-pago-form',
@@ -9,7 +9,7 @@ import { PagosInterfae } from '../models/pago.interface';
 })
 export class PagoFormComponent implements OnInit {
 
-  @Input() item!: PagosInterfae;
+  @Input() item!: PagosInterface;
   @Output() ButtonClick = new EventEmitter<any>();
   element: any;
   pagosForm!: FormGroup;

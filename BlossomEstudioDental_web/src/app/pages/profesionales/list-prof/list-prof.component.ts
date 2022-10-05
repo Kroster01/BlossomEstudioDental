@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { ProfesionalInterfae } from 'src/app/shared/models/profesional.interface';
+import { ProfesionalesService } from 'src/app/services/profesionales.service';
+import { ProfesionalInterface } from 'src/app/shared/models/profesional.interface';
 
 @Component({
   selector: 'app-list-prof',
@@ -9,10 +10,10 @@ import { ProfesionalInterfae } from 'src/app/shared/models/profesional.interface
 })
 export class ListProfComponent implements OnInit {
 
-  navigationExtras: ProfesionalInterfae = {};
+  navigationExtras: ProfesionalInterface = {};
 
-  fakeData: ProfesionalInterfae[] = [{
-    id: 0,
+  fakeData: ProfesionalInterface[] = [{
+    id: '0',
     nombre: 'Marcela',
     apellido: 'Huina',
     rut: 'xx.xxx.xxx-x',
@@ -20,7 +21,7 @@ export class ListProfComponent implements OnInit {
     estado: true,
     createReg: '01/03/2022',
   }, {
-    id: 1,
+    id: '1',
     nombre: 'Fernando',
     apellido: 'Curihual',
     rut: 'xx.xxx.xxx-x',
@@ -28,7 +29,7 @@ export class ListProfComponent implements OnInit {
     estado: true,
     createReg: '01/03/2022',
   }, {
-    id: 2,
+    id: '2',
     nombre: 'Nicole',
     apellido: 'Coñuepan',
     rut: 'xx.xxx.xxx-x',
@@ -36,7 +37,7 @@ export class ListProfComponent implements OnInit {
     estado: false,
     createReg: '01/03/2022',
   }, {
-    id: 3,
+    id: '3',
     nombre: 'Andrea',
     apellido: 'Morales',
     rut: 'xx.xxx.xxx-x',
@@ -49,12 +50,25 @@ export class ListProfComponent implements OnInit {
   showLista = true;
   showEdit = false;
   showDetails = false;
-  constructor(private router: Router) { }
+  profesionales!: ProfesionalInterface[];
+
+  constructor(private profesionalesService: ProfesionalesService) { }
 
   ngOnInit(): void {
     this.showLista = true;
     this.showEdit = false;
     this.showDetails = false;
+
+    this.profesionalesService.getProfesionales()
+      .subscribe((res: any) => {
+        this.profesionales = res.map((e: any) => {
+          return {
+            id: e.payload.doc.id,
+            ...(e.payload.doc.data() as ProfesionalInterface)
+          };
+        })
+      });
+
   }
 
   onGoToEdit(item: any): void {

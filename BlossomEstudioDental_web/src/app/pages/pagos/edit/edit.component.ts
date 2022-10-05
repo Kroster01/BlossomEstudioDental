@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { PagosInterfae } from 'src/app/shared/models/pago.interface';
+import { PagosInterface } from 'src/app/shared/models/pago.interface';
 
 @Component({
   selector: 'app-edit',
@@ -8,7 +8,7 @@ import { PagosInterfae } from 'src/app/shared/models/pago.interface';
 })
 export class EditComponent implements OnInit {
 
-  @Input() item!: PagosInterfae;
+  @Input() item!: PagosInterface;
   @Output() ButtonClick = new EventEmitter<any>();
 
   constructor() { }

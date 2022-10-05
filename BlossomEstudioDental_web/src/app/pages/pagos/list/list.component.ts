@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { PagosInterfae } from 'src/app/shared/models/pago.interface';
+import { PagosService } from 'src/app/services/pagos.service';
+import { PagosInterface } from 'src/app/shared/models/pago.interface';
 
 @Component({
   selector: 'app-list',
@@ -9,48 +10,48 @@ import { PagosInterfae } from 'src/app/shared/models/pago.interface';
 })
 export class ListComponent implements OnInit {
 
-  navigationExtras: PagosInterfae = {};
+  navigationExtras: PagosInterface = {};
 
-  fakeData: PagosInterfae[] = [{
-    id: 0,
+  fakeData: PagosInterface[] = [{
+    id: '0',
     nombre: 'Marcela',
     apellido: 'Huina',
     descripcion: 'Derscripción trabajo Marce',
     fecha: '03/03/2022',
-    monto: '10000',
+    monto: 10000,
     estado: 1,
     observacion: 'N/A Marcela',
     pagoHonorario: false,
     createReg: '01/03/2022',
   }, {
-    id: 1,
+    id: '1',
     nombre: 'Fernando',
     apellido: 'Curihual',
     descripcion: 'Derscripción trabajo Fernando',
     fecha: '05/05/2022',
-    monto: '30000',
+    monto: 30000,
     estado: 0,
     observacion: 'N/A Fernando',
     pagoHonorario: false,
     createReg: '01/03/2022',
   }, {
-    id: 2,
+    id: '2',
     nombre: 'Nicole',
     apellido: 'Coñuepan',
     descripcion: 'Derscripción trabajo Nicole',
     fecha: '04/04/2022',
-    monto: '50000',
+    monto: 50000,
     estado: 2,
     observacion: 'N/A Nicole',
     pagoHonorario: true,
     createReg: '01/03/2022',
   }, {
-    id: 3,
+    id: '3',
     nombre: 'Andrea',
     apellido: 'Morales',
     descripcion: 'Derscripción trabajo Andrea',
     fecha: '08/08/2022',
-    monto: '70000',
+    monto: 70000,
     estado: 1,
     observacion: 'N/A Andrea',
     pagoHonorario: true,
@@ -61,12 +62,24 @@ export class ListComponent implements OnInit {
   showLista = true;
   showEdit = false;
   showDetails = false;
-  constructor(private router: Router) { }
+  pagos!: PagosInterface[];
+
+  constructor(private pagosService: PagosService) { }
 
   ngOnInit(): void {
     this.showLista = true;
     this.showEdit = false;
     this.showDetails = false;
+
+    this.pagosService.getPagos()
+      .subscribe((res: any) => {
+        this.pagos = res.map((e: any) => {
+          return {
+            id: e.payload.doc.id,
+            ...(e.payload.doc.data() as PagosInterface)
+          };
+        })
+      });
   }
 
   onGoToEdit(item: any): void {

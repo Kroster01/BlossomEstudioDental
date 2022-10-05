@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ProfesionalInterfae } from '../models/profesional.interface';
+import { ProfesionalInterface } from '../models/profesional.interface';
 
 @Component({
   selector: 'app-profesional-form',
@@ -9,7 +9,7 @@ import { ProfesionalInterfae } from '../models/profesional.interface';
 })
 export class ProfesionalFormComponent implements OnInit {
 
-  @Input() item!: ProfesionalInterfae;
+  @Input() item!: ProfesionalInterface;
   @Output() ButtonClick = new EventEmitter<any>();
   element: any;
   pagosForm!: FormGroup;

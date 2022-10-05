@@ -1,5 +1,5 @@
-export interface ProfesionalInterfae {
-    id?: number,
+export interface ProfesionalInterface {
+    id?: string,
     nombre?: string,
     apellido?: string,
     rut?: string,
