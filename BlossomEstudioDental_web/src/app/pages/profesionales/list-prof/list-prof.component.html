@@ -13,7 +13,7 @@ profesionales: <br/> {{ profesionales | json}}
         </tr>
     </thead>
     <tbody>
-        <tr class="table-primary" *ngFor="let item of fakeData">
+        <tr class="table-primary" *ngFor="let item of profesionales">
             <th scope="row">{{ item.nombre }}</th>
             <td>{{ item.apellido }}</td>
             <td>{{ item.rut }}</td>

@@ -12,6 +12,7 @@ export class ListComponent implements OnInit {
 
   navigationExtras: PagosInterface = {};
 
+/*
   fakeData: PagosInterface[] = [{
     id: '0',
     nombre: 'Marcela',
@@ -58,6 +59,7 @@ export class ListComponent implements OnInit {
     createReg: '01/03/2022',
   }
   ];
+*/
 
   showLista = true;
   showEdit = false;

@@ -15,7 +15,7 @@ pagos: <br/> {{ pagos | json}}
         </tr>
     </thead>
     <tbody>
-        <tr class="table-primary" *ngFor="let item of fakeData">
+        <tr class="table-primary" *ngFor="let item of pagos">
             <th scope="row">{{ item.nombre }} {{ item.apellido }}</th>
             <td>{{ item.descripcion }}</td>
             <td>{{item.fecha | date:'MMMM'}}</td>

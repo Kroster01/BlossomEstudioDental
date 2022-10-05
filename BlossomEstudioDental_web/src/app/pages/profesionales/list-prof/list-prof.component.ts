@@ -12,6 +12,7 @@ export class ListProfComponent implements OnInit {
 
   navigationExtras: ProfesionalInterface = {};
 
+/*
   fakeData: ProfesionalInterface[] = [{
     id: '0',
     nombre: 'Marcela',
@@ -46,6 +47,7 @@ export class ListProfComponent implements OnInit {
     createReg: '01/03/2022',
   },
   ];
+*/
 
   showLista = true;
   showEdit = false;
