@@ -40,7 +40,11 @@ export class PagoFormComponent implements OnInit {
 
   guardar(): void {
     console.log('guardar app-edit');
-    alert('se guarda el item: ' + this.element.id);
+    if (this.element) {
+      alert('se guarda el item: ' + this.element.id);
+    } else {
+      alert('se guarda el item.. ');
+    }
   }
 
   private initForm(): void {

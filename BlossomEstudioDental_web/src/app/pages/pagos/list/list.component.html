@@ -18,7 +18,7 @@ pagos: <br/> {{ pagos | json}}
         <tr class="table-primary" *ngFor="let item of pagos">
             <th scope="row">{{ item.nombre }} {{ item.apellido }}</th>
             <td>{{ item.descripcion }}</td>
-            <td>{{item.fecha | date:'MMMM'}}</td>
+            <td>{{item.fecha.toDate() | date:'MMMM yyyy'}}</td>
             <td>{{ item.monto | currency: '$ ' | lowercase }}</td>
             <td>
                 <div *ngIf="item.estado == 0">
