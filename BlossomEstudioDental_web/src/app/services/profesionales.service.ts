@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFirestore, DocumentChangeAction } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
 import { ProfesionalInterface } from '../shared/models/profesional.interface';
 
 @Injectable({
@@ -9,7 +10,7 @@ export class ProfesionalesService {
 
   constructor(private readonly angularFirestore: AngularFirestore) { }
 
-  getProfesionales() {
+  getProfesionales(): Observable<DocumentChangeAction<unknown>[]> {
     return this.angularFirestore
       .collection("profesionales")
       .snapshotChanges();

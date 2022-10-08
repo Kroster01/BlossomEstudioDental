@@ -9,7 +9,7 @@ import { ProfesionalInterface } from '../models/profesional.interface';
 })
 export class ProfesionalFormComponent implements OnInit {
 
-  @Input() item!: ProfesionalInterface;
+  @Input() itemOriginal!: ProfesionalInterface;
   @Output() ButtonClick = new EventEmitter<any>();
   element: any;
   pagosForm!: FormGroup;
@@ -17,14 +17,19 @@ export class ProfesionalFormComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    console.log('Init app-edit : item');
-    console.log(JSON.stringify(this.item));
-    this.element = this.item;
-    this.initForm();
+    console.log('Init app-edit : itemOriginal');
+    console.log(JSON.stringify(this.itemOriginal));
+    this.element = this.itemOriginal;
+    this.setDatForm();
+  }
+
+  setDatForm() {
     if (typeof this.element == 'undefined') {
       // redirigir o mostrar un mensaje.
       // TODO: re dirigir a new
+      this.initForm();
     } else {
+      this.initFormData(this.itemOriginal);
       this.pagosForm.patchValue(this.element);
     }
   }
@@ -39,11 +44,12 @@ export class ProfesionalFormComponent implements OnInit {
   }
 
   guardar(): void {
-    console.log('guardar app-edit-prof');
     if (this.element) {
-      alert('se guarda el item: ' + this.element.id);
+      console.log('guardar app-edit-prof');
+      alert('se guarda el itemOriginal app-edit-prof: ' + this.element.id);
     } else {
-      alert('se guarda el item.. ');
+      console.log('guardar app-new-prof');
+      alert('se guarda el itemOriginal app-new-prof.. ');
     }
   }
 
@@ -54,6 +60,16 @@ export class ProfesionalFormComponent implements OnInit {
       rut: ['', [Validators.required]],
       especialidad: ['', [Validators.required]],
       estado: ['', [Validators.required]]
+    });
+  }
+
+  private initFormData(param: ProfesionalInterface): void {
+    this.pagosForm = this.fb.group({
+      nombre: [param.nombre, [Validators.required]],
+      apellido: [param.apellido, [Validators.required]],
+      rut: [param.rut, [Validators.required]],
+      especialidad: [param.especialidad, [Validators.required]],
+      estado: [param.estado, [Validators.required]]
     });
   }
 

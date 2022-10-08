@@ -63,14 +63,17 @@ export class ListProfComponent implements OnInit {
 
     this.profesionalesService.getProfesionales()
       .subscribe((res: any) => {
-        this.profesionales = res.map((e: any) => {
+        this.profesionales = this.convertToModelPagos(res.map((e: any) => {
           return {
             id: e.payload.doc.id,
             ...(e.payload.doc.data() as ProfesionalInterface)
           };
-        })
+        }))
       });
+  }
 
+  convertToModelPagos(item: any): ProfesionalInterface[] {
+    return item;
   }
 
   onGoToEdit(item: any): void {

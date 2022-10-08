@@ -12,14 +12,11 @@
             <div class="form-group col-md-6 mb-3">
                 <select class="form-select" id="exampleSelect1">
                     <option>Nombre Profecional</option>
-                    <option>Marcela Huinca</option>
-                    <option>Fernando</option>
-                    <option>Nicol</option>
-                    <option>Andrea</option>
+                    <option *ngFor="let item of profesionales" value="{{ item.id }}">{{ item.nombre }} {{item.apellido}}</option>
                 </select>
             </div>
             <div class="form-group col-md-6 mb-3">
-                <input type="text" class="form-control" placeholder="Descripción" formControlName="descripcion">
+                <input type="text" class="form-control" placeholder="Descripción" pattern="^[a-zA-Z\sáéíóúÁÉÍÓÚÑñ]+$" formControlName="descripcion">
             </div>
         </div>
         <div class="form-row row">

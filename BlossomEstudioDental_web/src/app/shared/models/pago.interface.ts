@@ -3,10 +3,15 @@ export interface PagosInterface {
     nombre?: string,
     apellido?: string,
     descripcion?: string,
-    fecha?: string,
+    fecha?: dateFirebase,
     monto?: number,
     estado?: number,
     observacion?: string,
     pagoHonorario?: boolean,
-    createReg?: string,
+    createReg?: dateFirebase,
+}
+
+export interface dateFirebase {
+    seconds: number,
+    nanoseconds: number
 }

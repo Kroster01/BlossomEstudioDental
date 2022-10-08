@@ -75,13 +75,17 @@ export class ListComponent implements OnInit {
 
     this.pagosService.getPagos()
       .subscribe((res: any) => {
-        this.pagos = res.map((e: any) => {
+        this.pagos = this.convertToModelPagos(res.map((e: any) => {
           return {
             id: e.payload.doc.id,
             ...(e.payload.doc.data() as PagosInterface)
           };
-        })
+        }))
       });
+  }
+
+  convertToModelPagos(item: any): PagosInterface[] {
+    return item;
   }
 
   onGoToEdit(item: any): void {
