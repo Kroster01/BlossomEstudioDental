@@ -1,3 +1,5 @@
+import { dateFirebase } from "./general.inteface";
+
 export interface ProfesionalInterface {
     id?: string,
     nombre?: string,
@@ -5,5 +7,5 @@ export interface ProfesionalInterface {
     rut?: string,
     especialidad?: string,
     estado?: boolean,
-    createReg?: string
+    createReg?: dateFirebase,
 }

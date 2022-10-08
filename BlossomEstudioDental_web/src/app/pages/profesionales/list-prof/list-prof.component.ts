@@ -18,7 +18,7 @@ export class ListProfComponent implements OnInit {
     nombre: 'Marcela',
     apellido: 'Huina',
     rut: 'xx.xxx.xxx-x',
-    especialidad: 'esp 0',
+    especialidad: 'esp 0 Marcela',
     estado: true,
     createReg: '01/03/2022',
   }, {
@@ -26,7 +26,7 @@ export class ListProfComponent implements OnInit {
     nombre: 'Fernando',
     apellido: 'Curihual',
     rut: 'xx.xxx.xxx-x',
-    especialidad: 'esp 1',
+    especialidad: 'esp 1 Fernando',
     estado: true,
     createReg: '01/03/2022',
   }, {
@@ -34,7 +34,7 @@ export class ListProfComponent implements OnInit {
     nombre: 'Nicole',
     apellido: 'Coñuepan',
     rut: 'xx.xxx.xxx-x',
-    especialidad: 'esp 2',
+    especialidad: 'esp 2 Nicole',
     estado: false,
     createReg: '01/03/2022',
   }, {
@@ -42,7 +42,7 @@ export class ListProfComponent implements OnInit {
     nombre: 'Andrea',
     apellido: 'Morales',
     rut: 'xx.xxx.xxx-x',
-    especialidad: 'esp 3',
+    especialidad: 'esp 3 Andrea',
     estado: true,
     createReg: '01/03/2022',
   },

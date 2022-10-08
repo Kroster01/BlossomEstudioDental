@@ -1,3 +1,5 @@
+import { dateFirebase } from "./general.inteface";
+
 export interface PagosInterface {
     id?: string,
     nombre?: string,
@@ -9,9 +11,4 @@ export interface PagosInterface {
     observacion?: string,
     pagoHonorario?: boolean,
     createReg?: dateFirebase,
-}
-
-export interface dateFirebase {
-    seconds: number,
-    nanoseconds: number
 }
